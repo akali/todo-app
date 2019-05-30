@@ -9,11 +9,13 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "release:major": "changelog -M && npm version major",
-    "release:minor": "changelog -m && npm version minor",
-    "release:patch": "changelog -p && npm version patch",
     "pre-commit": "npm run lint && npm run test:unit",
-    "pre-commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    "pre-commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+    "add-changelog": "git add CHANGELOG.md && git commit -m 'doc: updated CHANGELOG.md'",
+    "push-changelog": "git push origin && git push origin --tags",
+    "release:major": "changelog -M && npm run add-changelog && npm version major && npm run push-changelog",
+    "release:minor": "changelog -m && npm run add-changelog && npm version minor && npm run push-changelog",
+    "release:patch": "changelog -p && npm run add-changelog && npm version patch && npm run push-changelog"
   },
   "husky": {
     "hooks": {
