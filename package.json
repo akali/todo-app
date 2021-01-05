@@ -24,7 +24,7 @@
     }
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "buefy": "^0.7.6",
     "core-js": "^2.6.5",
     "generate-changelog": "^1.7.1",
